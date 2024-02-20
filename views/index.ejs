@@ -1,0 +1,25 @@
+<h1> TO-DO list </h1>
+
+
+<form action="/submit" method="post">
+    <label for="todo">please input ur text below if u wanna submit or add something</label><br>
+    <input type="text" id="todo" name="todo"><br>
+</form>
+
+
+        
+    <form action="/submit" method="post"> 
+        
+          <input type="radio" id="delete" name="delete" href="/delete">
+          <label for="delete">press this for deleting</label><br>
+          <input type="radio" id="update" name="update" value="update">
+          <label for="update">click this button for updating</label>
+        </form>
+
+<h2>here are your to-do list : </h2>
+
+ <% if (locals.todolist) {%>
+    <% for (let i = 0; i < todolist.length; i++) {%>
+    <h2><%= todolist[i] %></h2>
+    <% } %>
+<% } %>
